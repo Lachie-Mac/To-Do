@@ -1,0 +1,89 @@
+.scroll-container{
+    margin-top: 6vh;
+    width: 100%;
+    height: 80vh;
+    position: fixed;
+    left: 0;
+    /*for scrolling*/
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+      
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari & Opera */
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.day-container {
+    width: 13.5vw;
+    height: 100%;
+    margin-right: 0.5vw;
+    background-color: white;
+    opacity: 0.80;
+    border-radius: 0.5vw;
+    /*for scrolling*/
+    flex: 0 0 auto;
+}
+
+DAY INDEX calculation for page load
+const DAY_ZERO = new Date(2021, 4, 1, 0, 0, 0);
+let day = new Date();
+dayindex = Math.floor(((day.getTime())-(DAY_ZERO.getTime()))/(1000 * 3600 * 24))+1; 
+// DAYS ARE NOT ZERO INDEXED, 1 May 2021 is Day 1 
+
+WORKING HTML
+<div class="day-container">
+    <div class="day-header">Monday 30 | 5</div>
+    <div class="all-tasks">
+        <div class="task-container">
+          <div class="task-description">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-0-0-0">
+              <input type="checkbox" id="list-checkbox-0-0-0" class="mdl-checkbox__input"/>
+            </label>
+            <div id="task-desc-0-0-main" class="task-text">Making old to do list obselete</div>
+          </div>
+          <hr>
+          <div class="task-description" id="task-desc-0-0-1">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect subtask-checkbox " for="list-checkbox-0-0-1">
+              <input type="checkbox" id="list-checkbox-0-0-1" class="mdl-checkbox__input"/>
+            </label>
+            <div class="subtask-text">coding this shit up</div>
+          </div>
+          <hr class="short-bar">
+          <div class="task-description" id="task-desc-0-0-">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect subtask-checkbox" for="list-checkbox-0-0-2">
+              <input type="checkbox" id="list-checkbox-0-0-2" class="mdl-checkbox__input"/>
+            </label>
+            <div class="subtask-text">deleting microsoft To Do</div>
+          </div>
+          <hr class="short-bar">
+          <span class="due-date" id="due-date-0-0" style="text-align: center;"></span>
+        </div>
+        <div class="task-container">
+          <textarea name="Text1" rows="2" placeholder="Add a Task" style="width:98%; margin-right:0px;" onkeydown = "if (event.keyCode == 13) taskAdded(0)"></textarea>
+        </div>
+    </div>
+</div>
+
+Due Date format: 
+3:00 am 1/5-Due in 3 days
+3:00 am 1/5-Due in 3 months 
+3:00 am 1/5-Due in 3 months 
+3:00 am 1/5-Due in 3 hours
+Fri 24 Dec - In 12 weeks 
+Fri 24 Dec - 12 weeks ago  
+
+<?php $reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/"; $text = "The text you want to filter goes here. http://google.com";
+if(preg_match($reg_exUrl, $text, $url)) {
+
+       echo preg_replace($reg_exUrl, '<a href="'.$url[0].'" rel="nofollow">'.$url[0].'</a>', $text);
+} else {
+       // if no urls in the text just return the text
+       echo $text;
+}
+?>
