@@ -16,7 +16,7 @@ DEL while on a focused task will delete task,
 
 DOUBLE CLICK to edit tasks
 
-submitting an empty repetition (eg empty every __ days box when you hit enter) will remove all other tasks associated with that repetition
+submitting an empty repetition (eg empty every __ days box when you hit enter) will remove all other FUTURE tasks associated with that repetition
 
 
 PROGRESS TO SITE AT
