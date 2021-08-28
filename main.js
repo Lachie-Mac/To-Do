@@ -1350,7 +1350,7 @@ const DATA_KEY = "TaskData";
         dayArray[indexCurrentDay+2].taskArray.push(instruction);
         let minorInstruction1 = new Subtask("I'm a subtask, pressing the - button will hide me");
         dayArray[indexCurrentDay+2].taskArray[0].subtaskArray.push(minorInstruction1);
-        let minorInstruction2 = new Subtask("Repetitions (Every __ Days) only create in the future, after entering a number and hitting enter");
+        let minorInstruction2 = new Subtask("Repetitions (Every __ Days) only create in the future, after clicking on a task, entering a number and hitting enter");
         dayArray[indexCurrentDay+2].taskArray[0].subtaskArray.push(minorInstruction2);
         let minorInstruction3 = new Subtask("To remove a repetition, remove the frequency and hit enter");
         dayArray[indexCurrentDay+2].taskArray[0].subtaskArray.push(minorInstruction3);
