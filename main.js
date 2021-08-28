@@ -1332,3 +1332,38 @@ const DATA_KEY = "TaskData";
 
     // display page
     displayPage();
+
+    // will run on first launch on that device
+    if(repetitionCount == 0)
+    {
+        // add one to repetition count
+
+
+        // gives first time instructions
+        let instruction = new Task("Welcome to To Do, I only work with a physical keyboard and in fullscreen, try ticking me off");
+        dayArray[indexCurrentDay].taskArray.push(instruction);
+
+        instruction = new Task("Double click on this text to edit the task, then press enter to confirm changes");
+        dayArray[indexCurrentDay+1].taskArray.push(instruction);
+
+        instruction = new Task("Click on me, then press wasd to move me around");
+        dayArray[indexCurrentDay+2].taskArray.push(instruction);
+        let minorInstruction1 = new Subtask("I'm a subtask, pressing the - button will hide me");
+        dayArray[indexCurrentDay+2].taskArray[0].subtaskArray.push(minorInstruction1);
+        let minorInstruction2 = new Subtask("Repetitions (Every __ Days) only create in the future, after entering a number and hitting enter");
+        dayArray[indexCurrentDay+2].taskArray[0].subtaskArray.push(minorInstruction2);
+        let minorInstruction3 = new Subtask("To remove a repetition, remove the frequency and hit enter");
+        dayArray[indexCurrentDay+2].taskArray[0].subtaskArray.push(minorInstruction3);
+
+        instruction = new Task("Click on me to focus me, then press delete to remove me");
+        dayArray[indexCurrentDay+3].taskArray.push(instruction);
+
+        instruction = new Task("Scroll horizontally to see more days, delete us all when you're done so we won't show up next time");
+        dayArray[indexCurrentDay+4].taskArray.push(instruction);
+
+        // updating tasks on those days
+        updateTasks(indexCurrentDay,indexCurrentDay+5);
+        
+        // update local storage too
+    }
+
