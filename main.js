@@ -1337,7 +1337,7 @@ const DATA_KEY = "TaskData";
     if(repetitionCount == 0)
     {
         // add one to repetition count
-        repetitionCount == 1;
+        repetitionCount = 1;
 
         // gives first time instructions
         let instruction = new Task("Welcome to To Do, I only work with a physical keyboard and in fullscreen, try ticking me off");
